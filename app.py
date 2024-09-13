@@ -2,23 +2,14 @@ from diffusers import StableDiffusionPipeline
 import torch
 from io import BytesIO
 import base64
-from huggingface_hub import snapshot_download
-import os
 
 class InferlessPythonModel:
     def initialize(self):
-        
-        local_path = "/var/nfs-mount/stable-diff-test"
-        if os.path.exists(local_path + "model_index.json") == False :
-            snapshot_download(
-                "runwayml/stable-diffusion-v1-5",
-                local_dir=local_path,
-            )
         self.pipe = StableDiffusionPipeline.from_pretrained(
-            local_path,
+            "crynux-ai/stable-diffusion-v1-5",
             torch_dtype=torch.float16,
-            device_map='auto'
-        )
+            device_map='cuda')
+
     def infer(self, inputs):
         prompt = inputs["prompt"]
         image = self.pipe(prompt).images[0]
