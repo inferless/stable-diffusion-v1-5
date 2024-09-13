@@ -7,8 +7,7 @@ class InferlessPythonModel:
     def initialize(self):
         self.pipe = StableDiffusionPipeline.from_pretrained(
             "crynux-ai/stable-diffusion-v1-5",
-            torch_dtype=torch.float16,
-            device_map='cuda')
+            torch_dtype=torch.float16).to("cuda")
 
     def infer(self, inputs):
         prompt = inputs["prompt"]
