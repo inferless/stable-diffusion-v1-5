@@ -3,6 +3,6 @@ INPUT_SCHEMA = {
         'datatype': 'STRING',
         'required': True,
         'shape': [1],
-        'example': ["What is Quantum Computing?"]
+        'example': ["a black cat with glowing eyes, cute, adorable, disney, pixar, highly detailed, 8k"]
     }
 }
