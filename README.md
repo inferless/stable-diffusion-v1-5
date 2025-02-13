@@ -1,5 +1,5 @@
-# Diffusion Template
-This is template for diffusion-based operation with custom libs 
+# Stable Diffusion v1.5 Template
+Stable Diffusion v1.5 is a text-to-image model by Stability AI, renowned for generating high-quality, diverse images from text prompts. 
 
 ---
 ## Prerequisites
